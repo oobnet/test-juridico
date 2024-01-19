@@ -6,7 +6,7 @@ const { Sequelize } = require('sequelize');
 /* dialect one of 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mssql' | 'db2' | 'snowflake' | 'oracle' */
 const sequelize = new Sequelize('test', 'root', '123123123', {
     host: 'localhost',
-    dialect:'mysql'
+    dialect:'postgres'
   });
   
 
