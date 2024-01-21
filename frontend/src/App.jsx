@@ -176,6 +176,11 @@ export default function AdvancedFilterDemo() {
  
     };
 
+    function showCLients(client){
+      setCompanie(client)
+      getUsers(client.id)
+    }
+
 
    async function otimizarRota(){
     const response = await axios.get(`${baseUrl}/otimizar-rota/${companie?.id}`)
@@ -241,6 +246,13 @@ export default function AdvancedFilterDemo() {
                 <Column field="nome" header="Code"></Column>
                 <Column field="email" header="Name"></Column>
                 <Column field="telefone" header="Category"></Column>
+                <Column  header="ACÇOES"
+                field={
+                  (client) =>  <Button label="CLIENTES" onClick={ evt => showCLients(client)} severity="help" className='col-md-3' />
+                }
+                >
+                       
+                </Column>
             </DataTable>
          </div>
    
@@ -270,6 +282,7 @@ export default function AdvancedFilterDemo() {
                       <Column field="telefone" header="Telefone"></Column>
                       <Column field="x" header="Cordenada X"></Column>
                       <Column field="y" header="Cordenada Y"></Column>
+                     
                   </DataTable>
             </Card>
 
